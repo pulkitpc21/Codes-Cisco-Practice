@@ -1,0 +1,13 @@
+class InsertionSort
+{
+  static void insert(int arr[],int i)
+  {
+       int min=arr[i];
+       int j=i-1;
+       while(j>=0 && arr[j]>min){
+           arr[j+1]=arr[j];
+           j=j-1;
+       }
+       arr[j+1]=min;
+  }
+}

@@ -1,0 +1,16 @@
+vector<int> levelOrder(Node* node)
+{
+ vector<Node*> q;
+ vector<int> s;
+ q.push_back(node);
+ while(q.empty()==false){
+     Node *x=q.front();
+     s.push_back(x->data);
+     q.erase(q.begin());
+     if(x->left!=NULL)
+     q.push_back(x->left);
+     if(x->right!=NULL)
+     q.push_back(x->right);
+ }
+ return s;
+}

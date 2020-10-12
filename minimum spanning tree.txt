@@ -1,0 +1,34 @@
+class MST {
+    static int spanningTree(int V, int E, ArrayList<ArrayList<Integer>> graph) {
+        boolean visited [] = new boolean[V];
+        int weight[]=new int[V];
+        Arrays.fill(weight,Integer.MAX_VALUE);
+        weight[0]=0;
+        for(int i=0;i<E;i++){
+            int minval=Integer.MAX_VALUE;
+            int min=V;
+            for(int j=0;j<V;j++){
+                if(!visited[j] && weight[j]<minval){
+                    minval=weight[j];
+                    min=j;
+                }
+            }
+            if(min==V){
+                break;
+            }
+            visited[min]=true;
+            int count=0;
+            for(Integer x:graph.get(min)){
+                if(!visited[count] && x!=Integer.MAX_VALUE && x<weight[count]){
+                    weight[count]=x;
+                }
+                count++;
+            }
+        }
+        int ans=0;
+        for(int i=0;i<V;i++){
+            ans+=weight[i];
+        }
+        return ans;
+    }
+}

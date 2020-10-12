@@ -1,0 +1,11 @@
+ int n=sc.nextInt();
+	     int total=0;
+	     int a[]=new int [n];
+	     for(int i=0;i<n-1;i++){
+	         a[i]=sc.nextInt();
+	         total+=a[i];
+	     }
+	         int sum=(n*(n+1))/2;
+	         int ans = sum -total;
+	         System.out.print(ans);
+	         System.out.println();

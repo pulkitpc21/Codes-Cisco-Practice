@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int x,y,n;
+        cin>>x>>y>>n;
+        int ht[n];
+        for(int i=0;i<n;i++) 
+        cin>>ht[i];
+        int r=0;
+        for(int i=0;i<n;i++)
+        {
+             int k=0;
+             int h=ht[i];
+             while(1)
+             {
+                 k++;
+                 if(h<=((x*k)-((k-1)*y)))
+                 break;
+             }
+             r=r+k;
+        }
+        cout<<r<<endl;
+    }
+    return 0;
+}
